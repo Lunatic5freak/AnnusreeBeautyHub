@@ -13,8 +13,8 @@ app.use(bodyParser.urlencoded({extended:true}))
 var transport=nodemailer.createTransport({
     service:'gmail',
     auth:{
-        user:process.env.USER_EMAIL,
-        pass:process.env.PASSWORD
+        user:'lunaticfreak2017@gmail.com',
+        pass:'753018925'
     }
 })
 

@@ -1,0 +1,372 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+}
+
+.nav-bar{
+   height: 57px;
+   position: sticky;
+   top: 0;
+   margin-bottom: 20px;
+   border-bottom: 3px solid orange;
+   z-index: 2;
+}
+.logo{
+   color: rgba(225,225,225, .1);
+   margin-left: 500px;
+   margin-bottom: 20px;
+   font-size: 35.5px;
+   font-style: italic;
+   background-image: url("download3.jfif");
+   background-repeat: repeat-x;
+   -webkit-background-clip: text;
+   animation: animate 10s linear infinite;
+}
+   @keyframes animate{
+       0%{
+           background-position: left 0px top 10px;
+       }
+       40%{
+           background-position: left 10px top 10px;
+       }
+   }
+@media (max-width:600px){
+   .nav-bar{
+       width: 100%;
+       height: 50px;
+       border-bottom: 3px solid orange;
+       margin-bottom: 2px;
+   }
+   .logo{
+       position: fixed;
+       margin-left: 15px;
+       font-size: 22px;
+       margin-top: 8px;
+       margin-right: 0;
+       padding: 0;
+   }
+
+}
+.sidebar1{
+   height: 50%;
+   width: 14%;
+   font-size: 14px;
+   float: left;
+   z-index: 2;
+   background-color: rgba(red, green, blue, 0.8);
+}
+.sidebar1 ul{
+   margin-left: 30px;
+}
+.sidebar1 ul li{
+   list-style-type: none;
+   font-size: 20px;
+   font-weight: bold;
+   margin-top: 10px;
+   cursor: pointer;
+}
+.sidebar1 ul li a:hover{
+   color: orange;
+   text-decoration: none;
+}
+.cls{
+   font-size: 25px;
+   display: none;
+   cursor: pointer;
+}
+@media (max-width:600px){
+   .sidebar1{
+       width:43%;
+       z-index: 20;
+       top: 50px;
+       position: fixed;
+       font-size: 15px;
+       display: none; 
+       background-color: rgba(129, 41, 41, 0.7);
+       height: 55%;
+   }
+
+   .sidebar1 ul li a{
+       color: aqua;
+       
+       
+   }
+
+   .cls{
+       display: inline;
+   }
+}
+.slider{
+   width: 84%;
+   margin-left: 14%;
+}
+@media (max-width:600px){
+   .slider{
+       width: 100% !important;
+       margin:0%;
+       padding: 0;
+   }
+   .slider img{
+       width: 80%;
+   }
+   
+}
+.title-box{
+   background-color: orange;
+   color: #ffffff;
+   width: 180px;
+   padding: 4px 10px;
+   height: 40px;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   display: flex;
+   border-bottom: 1px solid;
+}
+.title-box h3{
+   font-size: 24px;
+}
+.title-box::after{
+   content: '';
+   border-top: 40px solid orange;
+   border-right: 50px solid transparent;
+   position: absolute;
+   display: flex;
+   margin-top: -4px;
+   margin-left: 170px;
+}
+.bridal img{
+   width: 290px;
+   height: 400px;
+}
+.featured img{
+   width: 300px;
+   height: 300px;
+   margin-left: 59px;
+}
+@media (max-width:600px){
+   .title-box{
+       margin-left: -10px;
+   }
+   .featured{
+       max-width: 100%;
+       margin: 0;
+   }
+   #fed1,#fed2,#fed3{
+       width: 100%;
+       height: 100%;
+       padding: 5px;
+       margin:0 0 10px 15px;
+   }
+}
+
+#off{
+   color: aqua;
+   text-transform: capitalize;
+   animation: dance 5s ease-in-out infinite alternate;
+}
+   @keyframes dance{
+       from{
+           color: #fff;
+           text-shadow: 0 0 10px #00fff2, 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 90px #00fff2;
+       }
+       to{
+           color: gray;
+           text-shadow: 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 80px #00fff2, 0 1 90px #00fff2;
+       }
+   }
+
+@media(max-width:600px){
+   .offer{
+       width: 100%;
+       margin-bottom: 0;
+   }
+   #off{
+       width: 95%;
+       margin: -10px;
+   }
+   #off h1{
+       font-size: 15px;
+   }
+} 
+
+.bridal img{
+   width: 300px;
+   height: 300px;
+   margin-left: 59px;
+   margin-top: 35px;
+
+}
+@media (max-width:600px){
+   .bridal{
+       width: 100%;
+   }
+   .bridal img{
+       width: 80%;
+       height: 600px;
+       margin-top: 20px;
+       margin-left: 5%;
+       margin-right: 0;
+       padding-top: 0 ;
+   }
+}
+
+
+
+.address{
+   font-weight: bold;
+   font-style: italic;
+   font-size: large;
+   text-transform: capitalize;
+}
+
+.review{
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   border-bottom: 1px solid black;
+   margin-bottom: 2px;
+}
+
+.review h5{
+   color:rgb(11, 216, 216);
+   font-size: 25px;
+}
+.review h6{
+   color: blue;
+   margin: 1px 0 2px 10px;
+   font-size: 20px;
+}
+
+.footer{
+   background-color: rgba(0, 0, 0, 0.55);
+}
+.row h5{
+   color: #00fff2;
+   margin-left: 10px ;
+   font-size: 30px;
+}
+.lg{
+   margin-left: 100px;
+   padding: 10px;
+}
+.row ul{
+   margin-left: 300px;
+   color: #00fff2;
+   text-decoration: none;
+   list-style-type: none;
+   font-weight: bold;
+   font-size: 15px;
+   justify-content: center;
+   margin-top: 15px;
+}
+#copyright{
+   margin-left: 500px;
+}
+
+#mail{
+   font-size: 10px;
+}
+
+@media (max-width:600px){
+
+   #review-area{
+       width: 92%;
+   }
+   #post-btn{
+       width: 92%;
+   }
+
+   .footer{
+       width: 100%;
+   }
+   #foot{
+       width: 92%;
+   }
+   #mailad{
+       font-size: 12px;
+   }
+
+   .lg{
+       width: 150px;
+       margin-left: 10px;
+       margin-top: 25px;
+       margin-bottom: 25px;
+   }
+   .row ul{
+       margin-left: 160px;
+       display: block-flex;
+       margin-top: -190px;
+   }
+   #copyright{
+       margin-left: 28px;
+   }
+   .address h4{
+       font-size: 15px;
+   }
+}
+
+/* for booking page */
+.form-container{
+   width: 100%;
+   background-image: url(data:image/jpeg;base64,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);
+   background-size: cover;
+}
+
+#form1{
+   color: black;
+   font-weight: bolder;
+   width: 80%;
+   margin-top: 45%;
+   margin-left: 5%;
+   margin-bottom: 10px;
+}
+input[type=text],input[type=tel],input[type=datetime-local]{
+   background: transparent;
+   outline: none;
+}
+
+.appointment-form{
+   margin-bottom: 5%;
+}
+
+/*confirm page css*/
+
+.confirm{
+    margin-top: 40%;
+}
+.title{
+    margin: 0 0 0 35%;
+}
+
+.confirm-content{
+    margin: 0 0 0 30%;
+}
+.confirm-content h6{
+    margin: 0 0 0 25%;
+}
+
+@media(max-width:600px){
+    .title{
+        margin-left: 2%;
+    }
+    .title h1{
+        font-size: 30px;
+    }
+    .confirm-content{
+        margin: 0;
+    }
+    .confirm-content h3{
+        font-size: 15px;
+    }
+    .confirm-content h4{
+        width: 80%;
+        font-size: 10px;
+    }
+    .confirm-content h5{
+        font-size: 15px;
+    }
+}
+
+
+

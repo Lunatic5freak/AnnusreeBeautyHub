@@ -14,7 +14,7 @@ var transport=nodemailer.createTransport({
     service:'gmail',
     auth:{
         user:'lunaticfreak2017@gmail.com',
-        pass:'753018925'
+        pass:'7538018925'
     }
 })
 
@@ -41,7 +41,7 @@ app.post('/book',(req,res)=>{
     var number=req.body.mobile;
 
     var mailOptions={
-        from:process.env.USER_EMAIL,
+        from:'lunaticfreak2017@gmail.com',
         to:'bbcmohanty.1999@gmail.com',
         subject:'New Booking',
         text:`An appointment has been booked by the customer ${name}. She request for ${work} at ${time} in ${place}. Her contact number is ${number} `

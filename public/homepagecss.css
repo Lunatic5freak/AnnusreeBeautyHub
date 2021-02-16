@@ -358,6 +358,7 @@ input[type=text],input[type=tel],input[type=datetime-local]{
     }
     .confirm-content h3{
         font-size: 15px;
+        font-weight: bold;
     }
     .confirm-content h4{
         width: 80%;

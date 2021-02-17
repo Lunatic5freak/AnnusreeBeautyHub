@@ -97,6 +97,7 @@ body{
 
    .cls{
        display: inline;
+       margin-left: 2px;
    }
 }
 .slider{

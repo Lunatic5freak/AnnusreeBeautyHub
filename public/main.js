@@ -23,21 +23,23 @@ function appendinfo(name, msg) {
   document.querySelector(".reviewarea").appendChild(div1);
 }
 
-$.ajax({
-  url: "/data",
-  type: "GET",
-  success: (response) => {
-    response.map((item) => {
-      var name = document.createTextNode(item.name);
-      var msg = document.createTextNode(item.msg);
-      appendinfo(name, msg);
-    });
-  },
-});
+function load(){
+  $.ajax({
+    url: "/data",
+    type: "GET",
+    success: (response) => {
+      response.map((item) => {
+        var name = document.createTextNode(item.name);
+        var msg = document.createTextNode(item.msg);
+        appendinfo(name, msg);
+      });
+    },
+  });
+}
+load()
 
 function postReview() {
   let name = document.getElementById("name").value;
-  console.log(name);
   let reviewtext = document.getElementById("review-area").value;
   let url = "/postreview";
   $.ajax({
@@ -49,17 +51,10 @@ function postReview() {
     type: "POST",
     dataType: "json",
     success: (response) => {
-      console.log(response);
-      response.map((item) => {
-        var name = document.createTextNode(item.name);
-        var msg = document.createTextNode(item.msg);
-        appendinfo(name, msg);
-      });
+      load()
     },
     error: () => {
-      alert("error");
+      alert("error:Something Went wrong while booking. Please contact us in the given contact details");
     },
   });
-
-  console.log("this is for posting");
 }

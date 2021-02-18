@@ -13,15 +13,16 @@ app.use(bodyParser.urlencoded({extended:true}))
 var transport=nodemailer.createTransport({
     service:'gmail',
     auth:{
-        user:'lunaticfreak2017@gmail.com',
-        pass:'7538018925'
+        user:process.env.USER_EMAIL,
+        pass:process.env.PASSWORD
     }
 })
 
 
 const data=()=>{
     var data=fs.readFileSync('./data.json')
-    return JSON.parse(data);
+    data=JSON.parse(data)
+    return data;
 }
 
 app.get('/',(req,res)=>{
@@ -56,7 +57,7 @@ app.post('/book',(req,res)=>{
     }
     transport.sendMail(mailOptions,(err,info)=>{
         if(err) console.log(err)
-        console.log(err)
+        console.log(info)
     })
     res.sendFile(path.join(__dirname+'/public/confirm.html'))
 })
@@ -79,7 +80,8 @@ app.post('/postreview',(req,res)=>{
         console.log('done writing')
     })
     
-    res.send(dat)
+    var newdata=data()
+    res.send(newdata)
 })
 
 

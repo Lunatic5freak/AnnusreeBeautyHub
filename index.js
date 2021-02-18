@@ -42,7 +42,7 @@ app.post('/book',(req,res)=>{
     var number=req.body.mobile;
 
     var mailOptions={
-        from:'lunaticfreak2017@gmail.com',
+        from:process.env.USER_EMAIL,
         to:'bbcmohanty.1999@gmail.com',
         subject:'New Booking',
         text:`An appointment has been booked by the customer ${name}. She request for ${work} at ${time} in ${place}. Her contact number is ${number} `
@@ -59,7 +59,48 @@ app.post('/book',(req,res)=>{
         if(err) console.log(err)
         console.log(info)
     })
+    let bookingDetails={}
+   if(address!==""){
+    bookingDetails={
+        name,
+        address,
+        work,
+        time,
+        place,
+        number
+    }
+   }
+   else{
+    bookingDetails={
+        name,
+        work,
+        time,
+        place,
+        number
+         }
+    }
+    var data=fs.readFileSync('./bookinglist.json')
+    data=JSON.parse(data)
+    data.push(bookingDetails)   
+    fs.writeFile('./bookinglist.json',JSON.stringify(data),(err)=>{
+        if(err) console.log(err)
+        console.log('done writing')
+    })
     res.sendFile(path.join(__dirname+'/public/confirm.html'))
+})
+
+app.post('/bookinglist',(req,res)=>{
+    let pass=req.body.password;
+    console.log(pass)
+    if(pass==process.env.PASSWORD_BOOKING){
+        var data=fs.readFileSync('./bookinglist.json')
+        data=JSON.parse(data)
+        console.log(data)
+        res.send(data)
+    }
+    else{
+        res.status(401).send({msg:'authorization required'})
+    }
 })
 
 app.get('/data',(req,res)=>{
@@ -79,9 +120,7 @@ app.post('/postreview',(req,res)=>{
         if(err) throw err;
         console.log('done writing')
     })
-    
-    var newdata=data()
-    res.send(newdata)
+    res.send(newData)
 })
 
 

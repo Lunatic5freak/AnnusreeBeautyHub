@@ -29,11 +29,11 @@
                 <li><a href="#bridal">Service</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#featured">Product</a></li>
-                <li><a href="#offer">Offer</a></li>
                 <li><a href="#bridal">Make up</a></li>
                 <li><a href="#bridal">Waxing</a></li>
                 <li><a href="#bridal">Bridal</a></li>
                 <li><a href="/appointment">Book an appointment</a></li>
+                <li><p onclick="showList()" style="cursor: pointer;">List</p></li>
             </ul>
         </div>
     </section>
@@ -152,7 +152,8 @@
             <div class="address">
                 <h4>
                     <i class="fa fa-map-marker" aria-hidden="true"></i><a
-                        href="https://map.google.com/map?q=delhi">Annushree Beauty Hub,Choupal,Near Relaxo
+                        href="https://maps.google.com/map?q=Annushree Beauty Hub,Choupal,Near Relaxo
+                        showroom,Samalkha,New-delhi,11003">Annushree Beauty Hub,Choupal,Near Relaxo
                         showroom,Samalkha,New-delhi,110037</a>
                 </h4>
                 <h4>
@@ -186,7 +187,7 @@
             </div>
         </div>
     </section>
-    <section class="revievw-section">
+    <section class="review-section">
         <div class="container">
             <div class="title-box" id="review-title">
                 <h3>Add a Review</h3>
@@ -207,6 +208,30 @@
                 </div>
             </div>
         </div>
+    </section>
+
+
+    <section class="table1" style="display:none;">
+        <div class="container">
+            <table class="table table-striped">
+                <thead class="thead-dark bg-dark">
+                    <tr>
+                        <td>Name</td>
+                        <td>work</td>
+                        <td>Time</td>
+                        <td>Place</td>
+                        <td>Number</td>
+                        <td>Address</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="first-row">
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
     </section>
 
     <section class="footer" id="foot">
@@ -235,6 +260,8 @@
             </div>
         </div>
     </section>
+
+
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

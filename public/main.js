@@ -51,10 +51,95 @@ function postReview() {
     type: "POST",
     dataType: "json",
     success: (response) => {
-      load()
+      var newname = document.createTextNode(name);
+      var msg = document.createTextNode(reviewtext);
+      appendinfo(newname,msg);
     },
     error: () => {
-      alert("error:Something Went wrong while booking. Please contact us in the given contact details");
+      alert("error");
     },
   });
+}
+
+
+
+function showList(){
+  var row=document.getElementById("first-row")
+  var pass=prompt("please enter Your password")
+  closeNav()
+  $.ajax({
+    url:'/bookingList',
+    method:'POST',
+    data:{
+      password:pass
+    },
+    success:(response)=>{
+      response.map((item)=>{
+        var length=Object.keys(item).length;
+        if(length>5){
+          var td1=document.createElement('td')
+          var td2=document.createElement('td')
+          var td3=document.createElement('td')
+          var td4=document.createElement('td')
+          var td5=document.createElement('td')
+          var td6=document.createElement('td')
+          var name=document.createTextNode(item.name)
+          var work=document.createTextNode(item.work)
+          var time=document.createTextNode(item.time)
+          var place=document.createTextNode(item.place)
+          var address=document.createTextNode(item.address)
+          var number=document.createTextNode(item.number)
+          td1.appendChild(name)
+          td2.appendChild(work)
+          td3.appendChild(time)
+          td4.appendChild(place)
+          td5.appendChild(number)
+          td6.appendChild(address)
+          row.appendChild(td1)
+          row.appendChild(td2)
+          row.appendChild(td3)
+          row.appendChild(td4)
+          row.appendChild(td5)
+          row.appendChild(td6)
+        }else{
+          var td1=document.createElement('td')
+          var td2=document.createElement('td')
+          var td3=document.createElement('td')
+          var td4=document.createElement('td')
+          var td5=document.createElement('td')
+          var name=document.createTextNode(item.name)
+          var work=document.createTextNode(item.work)
+          var time=document.createTextNode(item.time)
+          var place=document.createTextNode(item.place)
+          var number=document.createTextNode(item.number)
+          td1.appendChild(name)
+          td2.appendChild(work)
+          td3.appendChild(time)
+          td4.appendChild(place)
+          td5.appendChild(number)
+          row.appendChild(td1)
+          row.appendChild(td2)
+          row.appendChild(td3)
+          row.appendChild(td4)
+          row.appendChild(td5)
+        }
+        document.querySelector('.offer').style.display="none"
+        document.querySelector('.featured').style.display="none"
+        document.querySelector('.bridal').style.display="none"
+        document.querySelector('.contact').style.display="none"
+        document.querySelector('.reviews').style.display="none"
+        document.querySelector('.review-section').style.display="none"
+        document.querySelector('.table1').style.display="block"
+      })
+    },
+    // statusCode:{
+    //  401:alert('authorization failed'),
+    //  200:(response)=>{
+    //    console.log(response)
+    //  }
+    // },
+    error:(res)=>{
+      alert('some error occured')
+    }
+  })
 }

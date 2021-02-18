@@ -68,6 +68,15 @@ body{
    margin-top: 10px;
    cursor: pointer;
 }
+
+.sidebar1 ul li p{
+    color: blue;
+}
+
+.sidebar1 ul li p:hover{
+    color: orange;
+}
+
 .sidebar1 ul li a:hover{
    color: orange;
    text-decoration: none;
@@ -90,10 +99,12 @@ body{
    }
 
    .sidebar1 ul li a{
-       color: aqua;
-       
-       
+       color: aqua;   
    }
+
+   .sidebar1 ul li p{
+    color: #00fff2;
+}
 
    .cls{
        display: inline;
@@ -272,7 +283,7 @@ body{
 @media (max-width:600px){
 
    #review-area{
-       width: 92%;
+       width: 100%;
    }
    #post-btn{
        width: 92%;
@@ -282,7 +293,7 @@ body{
        width: 100%;
    }
    #foot{
-       width: 92%;
+       width: 100%;
    }
    #mailad{
        font-size: 12px;
